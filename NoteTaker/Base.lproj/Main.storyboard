@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oav-Hr-avJ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+    </dependencies>
+    <scenes>
+        <!--NoteView-->
+        <scene sceneID="TSW-iv-Zw9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NoteView" id="I81-uS-r8N" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OmB-b2-cdu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="296"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="jsV-GN-Qef">
+            <objects>
+                <splitViewController id="oav-Hr-avJ" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="I81-uS-r8N" kind="relationship" relationship="detailViewController" id="WZx-TY-Mna"/>
+                        <segue destination="KVF-V3-E2r" kind="relationship" relationship="masterViewController" id="msl-Hp-drY"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mAg-P7-Tp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1052" y="5"/>
+        </scene>
+        <!--NotesListView-->
+        <scene sceneID="N3Z-Gs-AX9">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NotesListView" id="KVF-V3-E2r" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nsa-xO-WQz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="-287"/>
+        </scene>
+    </scenes>
+</document>
