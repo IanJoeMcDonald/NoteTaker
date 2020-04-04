@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoteViewController: UIViewController, Storyboarded {
+class WrittenNoteViewController: UIViewController, Storyboarded {
 
     var text = ""
     

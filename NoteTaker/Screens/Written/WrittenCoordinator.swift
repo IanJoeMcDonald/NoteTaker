@@ -20,7 +20,7 @@ class WrittenCoordinator: Coordinator {
         notesListViewController.coordinator = self
         primaryNavigationController.viewControllers = [notesListViewController]
         
-        let detailViewController = NoteViewController.instantiate()
+        let detailViewController = WrittenNoteViewController.instantiate()
         
         let detailNav = CoordinatedNavigationController(rootViewController: detailViewController)
         detailNav.coordinator = self
@@ -30,7 +30,7 @@ class WrittenCoordinator: Coordinator {
     }
     
     func showDetailView(with text: String) {
-        let detailVc = NoteViewController.instantiate()
+        let detailVc = WrittenNoteViewController.instantiate()
         detailVc.text = text
         let detailNav = CoordinatedNavigationController(rootViewController: detailVc)
         splitViewController.showDetailViewController(detailNav, sender: self)

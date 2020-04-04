@@ -14,8 +14,8 @@
 		9A58AB5324354B730087609D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A58AB5124354B730087609D /* LaunchScreen.storyboard */; };
 		9A58AB5E24354B740087609D /* NoteTakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB5D24354B740087609D /* NoteTakerTests.swift */; };
 		9A58AB6924354B740087609D /* NoteTakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB6824354B740087609D /* NoteTakerUITests.swift */; };
-		9A58AB7B243555B00087609D /* NoteView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A58AB7A243555B00087609D /* NoteView.storyboard */; };
-		9A58AB7D243555CE0087609D /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB7C243555CE0087609D /* NoteViewController.swift */; };
+		9A58AB7B243555B00087609D /* WrittenNoteView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A58AB7A243555B00087609D /* WrittenNoteView.storyboard */; };
+		9A58AB7D243555CE0087609D /* WrittenNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB7C243555CE0087609D /* WrittenNoteViewController.swift */; };
 		9A58AB7F243558610087609D /* NotesListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A58AB7E243558610087609D /* NotesListView.storyboard */; };
 		9A58AB81243558DB0087609D /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB80243558DB0087609D /* NotesListViewController.swift */; };
 		9A58AB83243559E10087609D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB82243559E10087609D /* Coordinator.swift */; };
@@ -57,8 +57,8 @@
 		9A58AB6424354B740087609D /* NoteTakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoteTakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A58AB6824354B740087609D /* NoteTakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTakerUITests.swift; sourceTree = "<group>"; };
 		9A58AB6A24354B740087609D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A58AB7A243555B00087609D /* NoteView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NoteView.storyboard; sourceTree = "<group>"; };
-		9A58AB7C243555CE0087609D /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		9A58AB7A243555B00087609D /* WrittenNoteView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WrittenNoteView.storyboard; sourceTree = "<group>"; };
+		9A58AB7C243555CE0087609D /* WrittenNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittenNoteViewController.swift; sourceTree = "<group>"; };
 		9A58AB7E243558610087609D /* NotesListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotesListView.storyboard; sourceTree = "<group>"; };
 		9A58AB80243558DB0087609D /* NotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
 		9A58AB82243559E10087609D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -94,6 +94,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A39A6A92438EF5000D57B89 /* UserConstants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserConstants;
+			sourceTree = "<group>";
+		};
 		9A58AB3724354B6F0087609D = {
 			isa = PBXGroup;
 			children = (
@@ -117,22 +124,18 @@
 		9A58AB4224354B6F0087609D /* NoteTaker */ = {
 			isa = PBXGroup;
 			children = (
+				9A8DC15C2438EC2800C5D18C /* Screens */,
+				9A8DC15A2438EBA900C5D18C /* Extensions */,
+				9A8DC1592438EB8200C5D18C /* Reusables */,
+				9A8DC1582438EB6A00C5D18C /* Protocols */,
+				9A8DC1572438EB4F00C5D18C /* Assets */,
 				9A58AB4324354B6F0087609D /* AppDelegate.swift */,
 				9A58AB4524354B6F0087609D /* SceneDelegate.swift */,
-				9A58AB4F24354B730087609D /* Assets.xcassets */,
+				9A62C8C92438D37500746F07 /* MainTabBarController.swift */,
+				9A8DC1552438E37500C5D18C /* SplitViewControllerDelegate.swift */,
 				9A58AB5124354B730087609D /* LaunchScreen.storyboard */,
 				9A58AB5424354B730087609D /* Info.plist */,
 				9A58AB4C24354B6F0087609D /* NoteTaker.xcdatamodeld */,
-				9A58AB7A243555B00087609D /* NoteView.storyboard */,
-				9A58AB7C243555CE0087609D /* NoteViewController.swift */,
-				9A58AB7E243558610087609D /* NotesListView.storyboard */,
-				9A58AB80243558DB0087609D /* NotesListViewController.swift */,
-				9A58AB82243559E10087609D /* Coordinator.swift */,
-				9A58AB8424355A1D0087609D /* Storyboarded.swift */,
-				9A62C8A32437F50B00746F07 /* CoordinatedNavController.swift */,
-				9A62C8C92438D37500746F07 /* MainTabBarController.swift */,
-				9A62C8CB2438D48E00746F07 /* WrittenCoordinator.swift */,
-				9A8DC1552438E37500C5D18C /* SplitViewControllerDelegate.swift */,
 			);
 			path = NoteTaker;
 			sourceTree = "<group>";
@@ -153,6 +156,75 @@
 				9A58AB6A24354B740087609D /* Info.plist */,
 			);
 			path = NoteTakerUITests;
+			sourceTree = "<group>";
+		};
+		9A8DC1572438EB4F00C5D18C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9A39A6A92438EF5000D57B89 /* UserConstants */,
+				9A58AB4F24354B730087609D /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		9A8DC1582438EB6A00C5D18C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9A58AB8424355A1D0087609D /* Storyboarded.swift */,
+				9A58AB82243559E10087609D /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9A8DC1592438EB8200C5D18C /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				9A62C8A32437F50B00746F07 /* CoordinatedNavController.swift */,
+				9A8DC15B2438EBDF00C5D18C /* NotesListView */,
+			);
+			path = Reusables;
+			sourceTree = "<group>";
+		};
+		9A8DC15A2438EBA900C5D18C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9A8DC15B2438EBDF00C5D18C /* NotesListView */ = {
+			isa = PBXGroup;
+			children = (
+				9A58AB7E243558610087609D /* NotesListView.storyboard */,
+				9A58AB80243558DB0087609D /* NotesListViewController.swift */,
+			);
+			path = NotesListView;
+			sourceTree = "<group>";
+		};
+		9A8DC15C2438EC2800C5D18C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				9A8DC15D2438EC5400C5D18C /* Written */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		9A8DC15D2438EC5400C5D18C /* Written */ = {
+			isa = PBXGroup;
+			children = (
+				9A8DC15E2438EC7100C5D18C /* WrittenNotesView */,
+				9A62C8CB2438D48E00746F07 /* WrittenCoordinator.swift */,
+			);
+			path = Written;
+			sourceTree = "<group>";
+		};
+		9A8DC15E2438EC7100C5D18C /* WrittenNotesView */ = {
+			isa = PBXGroup;
+			children = (
+				9A58AB7A243555B00087609D /* WrittenNoteView.storyboard */,
+				9A58AB7C243555CE0087609D /* WrittenNoteViewController.swift */,
+			);
+			path = WrittenNotesView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +334,7 @@
 				9A58AB7F243558610087609D /* NotesListView.storyboard in Resources */,
 				9A58AB5324354B730087609D /* LaunchScreen.storyboard in Resources */,
 				9A58AB5024354B730087609D /* Assets.xcassets in Resources */,
-				9A58AB7B243555B00087609D /* NoteView.storyboard in Resources */,
+				9A58AB7B243555B00087609D /* WrittenNoteView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +364,7 @@
 				9A58AB4624354B6F0087609D /* SceneDelegate.swift in Sources */,
 				9A58AB83243559E10087609D /* Coordinator.swift in Sources */,
 				9A62C8A42437F50B00746F07 /* CoordinatedNavController.swift in Sources */,
-				9A58AB7D243555CE0087609D /* NoteViewController.swift in Sources */,
+				9A58AB7D243555CE0087609D /* WrittenNoteViewController.swift in Sources */,
 				9A8DC1562438E37500C5D18C /* SplitViewControllerDelegate.swift in Sources */,
 				9A58AB4E24354B6F0087609D /* NoteTaker.xcdatamodeld in Sources */,
 				9A62C8CC2438D48E00746F07 /* WrittenCoordinator.swift in Sources */,
