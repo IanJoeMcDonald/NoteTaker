@@ -10,16 +10,27 @@ import UIKit
 
 class NotesListViewController: UITableViewController, Storyboarded {
 
+    var coordinator: WrittenCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+}
+
+extension NotesListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 10
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
@@ -28,10 +39,6 @@ class NotesListViewController: UITableViewController, Storyboarded {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let vc = UIStoryboard(name: "NoteView", bundle: .main).instantiateInitialViewController() as? NoteViewController else { return }
-        
-        vc.text = "Test \(indexPath.row)"
-        
-        navigationController?.pushViewController(vc, animated: true)
+        coordinator?.showDetailView(with: "Test \(indexPath.row)")
     }
 }

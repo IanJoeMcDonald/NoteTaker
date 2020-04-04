@@ -19,5 +19,9 @@ class NoteViewController: UIViewController, Storyboarded {
 
         label.text = text + "Hello"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
 }

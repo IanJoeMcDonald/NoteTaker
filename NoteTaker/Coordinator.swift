@@ -8,11 +8,8 @@
 
 import UIKit
 
-protocol Coordinator {
-    var childCoordinators: [Coordinator] { get set }
+protocol Coordinator: AnyObject {
     var splitViewController: UISplitViewController { get set }
-
-    func start()
 }
 
 

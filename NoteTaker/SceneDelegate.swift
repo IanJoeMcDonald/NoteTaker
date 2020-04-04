@@ -11,7 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator: MainCoordinator?
+    var tabBarController: MainTabBarController?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,19 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        // create the main split view controller to be used for the app
-        let splitViewController = UISplitViewController()
-        
-        // send tht into our coordinator so that it can display view controllers
-        coordinator = MainCoordinator(splitViewController: splitViewController)
-        
-        // give control to the coordinator
-        coordinator?.start()
+        tabBarController = MainTabBarController()
         
         //create a basic UIWindow and activate it
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = splitViewController
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 
