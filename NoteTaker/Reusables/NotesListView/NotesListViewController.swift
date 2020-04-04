@@ -39,6 +39,6 @@ extension NotesListViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.showDetailView(with: "Test \(indexPath.row)")
+        coordinator?.showDetailView()
     }
 }

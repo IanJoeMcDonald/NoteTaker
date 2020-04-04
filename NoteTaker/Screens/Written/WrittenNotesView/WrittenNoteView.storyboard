@@ -15,22 +15,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCj-LP-bsE">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" allowsEditingTextAttributes="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xQm-p4-9ca">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mCj-LP-bsE" firstAttribute="centerX" secondItem="zz7-fv-X6p" secondAttribute="centerX" id="sJU-pL-ELl"/>
-                            <constraint firstItem="mCj-LP-bsE" firstAttribute="centerY" secondItem="zz7-fv-X6p" secondAttribute="centerY" id="zhi-Yp-0ak"/>
+                            <constraint firstItem="xQm-p4-9ca" firstAttribute="leading" secondItem="gGG-CQ-aY7" secondAttribute="leading" id="1kd-Xm-qQa"/>
+                            <constraint firstItem="gGG-CQ-aY7" firstAttribute="trailing" secondItem="xQm-p4-9ca" secondAttribute="trailing" id="Tue-MA-9pM"/>
+                            <constraint firstItem="xQm-p4-9ca" firstAttribute="top" secondItem="gGG-CQ-aY7" secondAttribute="top" id="Zw2-fz-URW"/>
+                            <constraint firstItem="gGG-CQ-aY7" firstAttribute="bottom" secondItem="xQm-p4-9ca" secondAttribute="bottom" id="fmA-rF-vqL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gGG-CQ-aY7"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="mCj-LP-bsE" id="VUa-jR-Cuf"/>
+                        <outlet property="textView" destination="xQm-p4-9ca" id="S5M-eo-P1y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlL-Tm-44O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

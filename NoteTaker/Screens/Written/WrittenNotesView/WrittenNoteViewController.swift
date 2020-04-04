@@ -9,19 +9,34 @@
 import UIKit
 
 class WrittenNoteViewController: UIViewController, Storyboarded {
-
-    var text = ""
     
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        label.text = text + "Hello"
+        
+        addMenuItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
-
+    
+    func addMenuItems() {
+        let setColor = UIMenuItem(title: "Color", action: #selector(selectColor))
+        
+        UIMenuController.shared.menuItems = [setColor]
+    }
+    
+    @objc func selectColor() {
+        /// Here we will show a color selector, but presently it will only set the color to red
+        setColor(.systemRed)
+    }
+    
+    func setColor(_ color: UIColor) {
+        let string = NSMutableAttributedString(attributedString: textView.attributedText)
+        string.setColor(color, for: textView.selectedRange)
+        textView.attributedText = string
+    }
 }

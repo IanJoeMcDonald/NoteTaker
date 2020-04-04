@@ -29,9 +29,8 @@ class WrittenCoordinator: Coordinator {
         splitViewController.preferredDisplayMode = .primaryOverlay
     }
     
-    func showDetailView(with text: String) {
+    func showDetailView() {
         let detailVc = WrittenNoteViewController.instantiate()
-        detailVc.text = text
         let detailNav = CoordinatedNavigationController(rootViewController: detailVc)
         splitViewController.showDetailViewController(detailNav, sender: self)
     }
