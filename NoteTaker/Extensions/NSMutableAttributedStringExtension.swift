@@ -10,18 +10,6 @@ import UIKit
 
 extension NSMutableAttributedString {
     func setColor(_ color: UIColor, for range: NSRange) {
-        var alreadyColor = true
-        let location = range.location
-        for index in location ..< location + range.length {
-            let attributedColor = self.attribute(NSAttributedString.Key.foregroundColor,
-                                                 at: index, effectiveRange: nil) as? UIColor
-            if attributedColor ?? UIColor.black != color {
-                alreadyColor = false
-                break
-            }
-        }
-        
-        let colorToSet = alreadyColor ? UIColor.black : color
-        self.addAttribute(NSAttributedString.Key.foregroundColor, value: colorToSet, range: range)
+        self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A1701D5243A823900ECC036 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1701D4243A823900ECC036 /* Colors.xcassets */; };
 		9A39A6AB2438FD4700D57B89 /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39A6AA2438FD4700D57B89 /* NSMutableAttributedStringExtension.swift */; };
 		9A58AB4424354B6F0087609D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB4324354B6F0087609D /* AppDelegate.swift */; };
 		9A58AB4624354B6F0087609D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB4524354B6F0087609D /* SceneDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A1701D4243A823900ECC036 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9A39A6AA2438FD4700D57B89 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
 		9A58AB4024354B6F0087609D /* NoteTaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A58AB4324354B6F0087609D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				9A39A6A92438EF5000D57B89 /* UserConstants */,
 				9A58AB4F24354B730087609D /* Assets.xcassets */,
+				9A1701D4243A823900ECC036 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A1701D5243A823900ECC036 /* Colors.xcassets in Resources */,
 				9A58AB7F243558610087609D /* NotesListView.storyboard in Resources */,
 				9A58AB5324354B730087609D /* LaunchScreen.storyboard in Resources */,
 				9A58AB5024354B730087609D /* Assets.xcassets in Resources */,
