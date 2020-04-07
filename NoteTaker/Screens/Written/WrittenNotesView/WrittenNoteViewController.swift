@@ -30,9 +30,11 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
     }
     
     @objc func selectColor() {
-        /// Here we will show a color selector, but presently it will only set the color to a test blue color
-        guard let color = UIColor(named: "Blue1") else { fatalError("Color Not Found in Assets") }
-        setColor(color)
+        
+        // TODO: Here we are showing the color picker, this needs to move to the coordinator
+        let vc = NTColorPickerViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     func setColor(_ color: UIColor) {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9A1701D5243A823900ECC036 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1701D4243A823900ECC036 /* Colors.xcassets */; };
+		9A1701DC243BF7E900ECC036 /* NTColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1701DB243BF7E900ECC036 /* NTColorPickerViewController.swift */; };
+		9A1701DE243BF80C00ECC036 /* NTColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1701DD243BF80C00ECC036 /* NTColorPickerView.swift */; };
 		9A39A6AB2438FD4700D57B89 /* NSMutableAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39A6AA2438FD4700D57B89 /* NSMutableAttributedStringExtension.swift */; };
 		9A58AB4424354B6F0087609D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB4324354B6F0087609D /* AppDelegate.swift */; };
 		9A58AB4624354B6F0087609D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB4524354B6F0087609D /* SceneDelegate.swift */; };
@@ -47,6 +49,8 @@
 
 /* Begin PBXFileReference section */
 		9A1701D4243A823900ECC036 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		9A1701DB243BF7E900ECC036 /* NTColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTColorPickerViewController.swift; sourceTree = "<group>"; };
+		9A1701DD243BF80C00ECC036 /* NTColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTColorPickerView.swift; sourceTree = "<group>"; };
 		9A39A6AA2438FD4700D57B89 /* NSMutableAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExtension.swift; sourceTree = "<group>"; };
 		9A58AB4024354B6F0087609D /* NoteTaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoteTaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A58AB4324354B6F0087609D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A1701DA243BF7B700ECC036 /* ColorPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				9A1701DB243BF7E900ECC036 /* NTColorPickerViewController.swift */,
+				9A1701DD243BF80C00ECC036 /* NTColorPickerView.swift */,
+			);
+			path = ColorPickerView;
+			sourceTree = "<group>";
+		};
 		9A39A6A92438EF5000D57B89 /* UserConstants */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +197,7 @@
 		9A8DC1592438EB8200C5D18C /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				9A1701DA243BF7B700ECC036 /* ColorPickerView */,
 				9A62C8A32437F50B00746F07 /* CoordinatedNavController.swift */,
 				9A8DC15B2438EBDF00C5D18C /* NotesListView */,
 			);
@@ -370,8 +384,10 @@
 				9A39A6AB2438FD4700D57B89 /* NSMutableAttributedStringExtension.swift in Sources */,
 				9A62C8CA2438D37500746F07 /* MainTabBarController.swift in Sources */,
 				9A58AB4624354B6F0087609D /* SceneDelegate.swift in Sources */,
+				9A1701DE243BF80C00ECC036 /* NTColorPickerView.swift in Sources */,
 				9A58AB83243559E10087609D /* Coordinator.swift in Sources */,
 				9A62C8A42437F50B00746F07 /* CoordinatedNavController.swift in Sources */,
+				9A1701DC243BF7E900ECC036 /* NTColorPickerViewController.swift in Sources */,
 				9A58AB7D243555CE0087609D /* WrittenNoteViewController.swift in Sources */,
 				9A8DC1562438E37500C5D18C /* SplitViewControllerDelegate.swift in Sources */,
 				9A58AB4E24354B6F0087609D /* NoteTaker.xcdatamodeld in Sources */,
