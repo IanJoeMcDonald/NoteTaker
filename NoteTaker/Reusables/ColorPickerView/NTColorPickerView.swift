@@ -11,11 +11,10 @@ import UIKit
 class NTColorPickerView: UIView {
     
     var delegate: NTColorPickerDelegate?
-    private var imageView: UIImageView!
+    private var imageView: NTMonitoredImageView!
     private var rectangleView: UIView!
     private var markerSquare: UIView!
     private var colorSelected: UIColor = UIColor(named: "Grayscale11")!
-    private var colorLocation: [Int] = [0,11]
     
     private var markerTopAnchor: NSLayoutConstraint!
     private var markerLeadingAnchor: NSLayoutConstraint!
@@ -100,7 +99,8 @@ class NTColorPickerView: UIView {
     }
     
     private func configureImageView() {
-        imageView = UIImageView()
+        imageView = NTMonitoredImageView()
+        imageView.delegate = self
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
         rectangleView.addSubview(imageView)
@@ -118,7 +118,6 @@ class NTColorPickerView: UIView {
         ])
     }
     
-    
     private func createColorImage() {
         let isDarkMode = traitCollection.userInterfaceStyle == .dark
         let renderer = UIGraphicsImageRenderer(size: CGSize(width: 120, height: 100))
@@ -128,16 +127,11 @@ class NTColorPickerView: UIView {
                     let color: UIColor
                     if row == 0 {
                         let position = isDarkMode ? 11 - column : column
-                        guard let localColor = UIColor(named: "Grayscale\(position)") else {
-                            fatalError("Attempted to create invalid color")
-                        }
-                        color = localColor
+                        color = UIColor(forName: ColorConstants.grayscale, shade: position)
                     } else {
                         let position = isDarkMode ? 9 - row : row - 1
                         let colorConstant = ColorConstants.array[column]
-                        guard let localColor = UIColor(named: colorConstant + String(position))
-                            else { fatalError("Attempted to create invalid color") }
-                        color = localColor
+                        color = UIColor(forName: colorConstant, shade: position)
                     }
                     ctx.cgContext.setFillColor(color.cgColor)
                     ctx.cgContext.fill(CGRect(x: column * 10, y: row * 10,
@@ -175,9 +169,47 @@ class NTColorPickerView: UIView {
     }
     
     private func moveSquareToColor() {
-        let location = CGRect(x: CGFloat(colorLocation[1]) * boxWidth,
-                              y: CGFloat(colorLocation[0]) * boxHeight,
+        let location: CGRect
+        if let name = colorSelected.name {
+            if name.hasPrefix(ColorConstants.grayscale) {
+                guard let numberCharacter = name.last else {
+                    fatalError("Unable to find last character")
+                }
+                guard var number = Int(String(numberCharacter)) else {
+                    fatalError("Character at the end of selectedColor.name is not a number")
+                }
+                if number == 0 || number == 1 {
+                    let nameWithoutLastCharacter = String(name.dropLast())
+                    if let lastCharacter = nameWithoutLastCharacter.last {
+                        if let _ = Int(String(lastCharacter)) {
+                            number += 10
+                        }
+                    }
+                }
+                
+                let position = isDarkMode ? 11 - number : number
+                location = CGRect(x: CGFloat(position) * boxWidth, y: CGFloat(0) * boxHeight,
+                                  width: boxWidth, height: boxHeight)
+            } else {
+                let colorName = String(name.dropLast())
+                guard let numberCharacter = name.last else {
+                    fatalError("Unable to find last character")
+                }
+                guard let colorNumber = Int(String(numberCharacter)) else {
+                    fatalError("Character at the end of selectedColor.name is not a number")
+                }
+                let position = isDarkMode ? 10 - colorNumber : colorNumber + 1
+                guard let index = ColorConstants.array.firstIndex(of: colorName) else {
+                    fatalError("Color named: \(colorName) not found in color array")
+                }
+                
+                location = CGRect(x: CGFloat(index) * boxWidth, y: CGFloat(position) * boxHeight,
+                                  width: boxWidth, height: boxHeight)
+            }
+        } else {
+            location = CGRect(x: CGFloat(11) * boxWidth, y: CGFloat(0) * boxHeight,
                               width: boxWidth, height: boxHeight)
+        }
         
         moveSquareTo(location)
     }
@@ -194,18 +226,11 @@ class NTColorPickerView: UIView {
         let touchLocation = touch.location(in: imageView)
         
         if imageView.bounds.contains(touchLocation) {
-            print("touch inside")
             touchInsideColorImage(at: touchLocation)
         } else {
-            print("touch outside")
             touchOutsideColorImage()
         }
         
-    }
-    
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
-        moveSquareToColor()
     }
     
     private func touchInsideColorImage(at location: CGPoint) {
@@ -213,20 +238,10 @@ class NTColorPickerView: UIView {
         let touchBoxY = Int(location.y/boxHeight)
         if touchBoxY == 0 {
             let position = isDarkMode ? 11 - touchBoxX : touchBoxX
-            let colorName = "Grayscale\(position)"
-            guard let color = UIColor(named: colorName) else {
-                fatalError("Attempted to create invalid color")
-            }
-            colorLocation = [0, touchBoxX]
-            colorSelected = color
+            colorSelected = UIColor(forName: ColorConstants.grayscale, shade: position)
         } else {
             let position = isDarkMode ? 9 - touchBoxY : touchBoxY - 1
-            let colorName = "\(ColorConstants.array[touchBoxX])\(position)"
-            guard let color = UIColor(named: colorName) else {
-                fatalError("Attempted to create invalid color")
-            }
-            colorLocation = [touchBoxY, touchBoxX]
-            colorSelected = color
+            colorSelected = UIColor(forName: ColorConstants.array[touchBoxX], shade: position)
         }
         moveSquareToColor()
         delegate?.colorPickerDidPickColor(colorSelected)
@@ -237,4 +252,10 @@ class NTColorPickerView: UIView {
         removeFromSuperview()
     }
     
+}
+
+extension NTColorPickerView: NTMonitoredImageViewDelegate {
+    func didSetBounds(_ bounds: CGRect, oldValue: CGRect) {
+        moveSquareToColor()
+    }
 }

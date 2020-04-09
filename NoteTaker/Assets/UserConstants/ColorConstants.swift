@@ -21,6 +21,7 @@ enum ColorConstants {
     static let yellow = "Yellow"
     static let lime = "Lime"
     static let green = "Green"
+    static let grayscale = "Grayscale"
     
     static let array = [ColorConstants.teal, ColorConstants.blue, ColorConstants.indigo,
                         ColorConstants.purple, ColorConstants.magenta, ColorConstants.red,
