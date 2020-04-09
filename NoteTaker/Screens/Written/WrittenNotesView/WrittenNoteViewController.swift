@@ -41,15 +41,6 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
         // Add view
         view.addSubview(cpView)
         
-        // Add Constraints
-        NSLayoutConstraint.activate([
-            cpView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor,
-                                           constant: 0),
-            cpView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,
-                                             constant: -10),
-            cpView.heightAnchor.constraint(equalToConstant: 285),
-            cpView.widthAnchor.constraint(equalToConstant: 342)
-        ])
     }
     
     func setColor(_ color: UIColor) {
@@ -63,14 +54,4 @@ extension WrittenNoteViewController: NTColorPickerDelegate {
     func colorPickerDidPickColor(_ color: UIColor) {
         setColor(color)
     }
-    
-    func colorPickerDidCancel(_ color: UIColor) {
-        setColor(color)
-    }
-    
-    func dismiss(_ view: UIView) {
-        view.removeFromSuperview()
-    }
-    
-    
 }

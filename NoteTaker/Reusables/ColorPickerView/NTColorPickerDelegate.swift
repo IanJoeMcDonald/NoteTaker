@@ -9,8 +9,5 @@
 import UIKit
 
 protocol NTColorPickerDelegate: AnyObject {
-    
     func colorPickerDidPickColor(_ color: UIColor)
-    func colorPickerDidCancel(_ color: UIColor)
-    func dismiss(_ view: UIView)
 }
