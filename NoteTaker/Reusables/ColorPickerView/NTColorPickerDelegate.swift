@@ -9,5 +9,6 @@
 import UIKit
 
 protocol NTColorPickerDelegate: AnyObject {
+    /// Called when a color picker color was selected or when the color picker will disappear
     func colorPickerDidPickColor(_ color: UIColor)
 }
