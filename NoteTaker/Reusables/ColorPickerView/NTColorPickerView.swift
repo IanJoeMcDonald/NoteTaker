@@ -11,10 +11,10 @@ import UIKit
 class NTColorPickerView: UIView {
     
     var delegate: NTColorPickerDelegate?
+    var colorSelected: UIColor = UIColor(named: "Grayscale11")!
     private var imageView: NTMonitoredImageView!
     private var rectangleView: UIView!
     private var markerSquare: UIView!
-    private var colorSelected: UIColor = UIColor(named: "Grayscale11")!
     
     private var markerTopAnchor: NSLayoutConstraint!
     private var markerLeadingAnchor: NSLayoutConstraint!
@@ -31,7 +31,6 @@ class NTColorPickerView: UIView {
         }
         
         return 10
-        
     }
     
     private var boxWidth: CGFloat {
@@ -40,7 +39,6 @@ class NTColorPickerView: UIView {
         }
         
         return 10
-        
     }
     
     override init(frame: CGRect) {
@@ -50,6 +48,12 @@ class NTColorPickerView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    init(color: UIColor) {
+        super.init(frame: .zero)
+        colorSelected = color
+        configure()
     }
     
     override func didMoveToSuperview() {
@@ -78,24 +82,28 @@ class NTColorPickerView: UIView {
         rectangleView.translatesAutoresizingMaskIntoConstraints = false
         rectangleView.layer.cornerRadius = 10
         rectangleView.layer.borderWidth = 5
-        rectangleView.layer.borderColor = UIColor.systemGray2.cgColor
+        rectangleView.layer.borderColor = UIColor.systemGray5.withAlphaComponent(0.8).cgColor
         rectangleView.clipsToBounds = true
         addSubview(rectangleView)
         
         let horizontalWidthAnchor = rectangleView.widthAnchor.constraint(equalToConstant: 342)
         horizontalWidthAnchor.priority = UILayoutPriority(500.0)
         
+        let verticalHeightAnchor = rectangleView.heightAnchor.constraint(equalToConstant: 295)
+        verticalHeightAnchor.priority = UILayoutPriority(500.0)
+        
         NSLayoutConstraint.activate([
-            rectangleView.heightAnchor.constraint(equalToConstant: 295),
+            rectangleView.topAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.topAnchor,
+                                               constant: 10),
             rectangleView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: 0),
-            rectangleView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,
-                                                    constant: -10),
+                                                  constant: -10),
             rectangleView.leadingAnchor.constraint(greaterThanOrEqualTo: safeAreaLayoutGuide.leadingAnchor,
                                                    constant: 10),
-            horizontalWidthAnchor
+            rectangleView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor,
+                                                    constant: -10),
+            horizontalWidthAnchor,
+            verticalHeightAnchor
         ])
-        
     }
     
     private func configureImageView() {
@@ -148,7 +156,7 @@ class NTColorPickerView: UIView {
         markerSquare = UIView()
         markerSquare.translatesAutoresizingMaskIntoConstraints = false
         markerSquare.layer.borderWidth = 2
-        markerSquare.layer.borderColor = UIColor.systemGray2.cgColor
+        markerSquare.layer.borderColor = UIColor.systemGray6.cgColor
         imageView.addSubview(markerSquare)
         
         markerLeadingAnchor = markerSquare.leadingAnchor.constraint(equalTo: imageView.leadingAnchor,
