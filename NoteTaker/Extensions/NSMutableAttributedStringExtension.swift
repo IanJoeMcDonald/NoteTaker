@@ -12,4 +12,8 @@ extension NSMutableAttributedString {
     func setColor(_ color: UIColor, for range: NSRange) {
         self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
     }
+    
+    func setFont(_ font: UIFont, for range: NSRange) {
+        self.addAttribute(NSAttributedString.Key.font, value: font, range: range)
+    }
 }
