@@ -47,4 +47,24 @@ extension UIColor {
         self.init(named: colorName)!
     }
     
+    func circleWithBorder(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        let borderWidth:CGFloat = 2
+        let revizedSize = CGSize(width: size.width - borderWidth,
+                                 height: size.height - borderWidth)
+        let origin = CGPoint(x: borderWidth / 2, y: borderWidth / 2)
+        let strokeColor: UIColor
+        if self == UIColor(forName: ColorConstants.grayscale, shade: 11) {
+            strokeColor = UIColor(forName: ColorConstants.grayscale, shade: 9)
+        } else {
+            strokeColor = UIColor(forName: ColorConstants.grayscale, shade: 11)
+        }
+        return UIGraphicsImageRenderer(size: size).image { ctx in
+            ctx.cgContext.setFillColor(self.cgColor)
+            ctx.cgContext.setStrokeColor(strokeColor.cgColor)
+            ctx.cgContext.setLineWidth(borderWidth)
+            ctx.cgContext.addEllipse(in: CGRect(origin: origin, size: revizedSize))
+            ctx.cgContext.drawPath(using: .fillStroke)
+        }
+    }
+    
 }
