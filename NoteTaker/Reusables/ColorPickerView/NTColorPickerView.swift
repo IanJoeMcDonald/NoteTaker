@@ -306,6 +306,7 @@ class NTColorPickerView: UIView {
     private func touchOutsideColorImage() {
         /// Remove the view and advise the delegate of the color selected
         delegate?.colorPickerDidPickColor(colorSelected)
+        delegate?.colorPickerDidDisappear?(colorSelected)
         removeFromSuperview()
     }
     
