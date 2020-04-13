@@ -13,6 +13,7 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var textView: UITextView!
     var selectedColor: UIColor!
+    var note: Note!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
+        textView.text = note.text
     }
     
     private func configure() {
@@ -105,6 +107,7 @@ extension WrittenNoteViewController: NTTextViewTolbarDelegate {
     
     func resignFirstResponder() {
         textView.resignFirstResponder()
+        note.text = textView.text
     }
     
     func showKeyboard() {
