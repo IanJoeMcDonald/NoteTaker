@@ -32,7 +32,12 @@ class WrittenCoordinator: Coordinator {
     func showDetailView(with note: Note) {
         let detailVc = WrittenNoteViewController.instantiate()
         let detailNav = CoordinatedNavigationController(rootViewController: detailVc)
+        detailVc.coordinator = self
         detailVc.note = note
         splitViewController.showDetailViewController(detailNav, sender: self)
+    }
+    
+    func reloadData() {
+        notesListViewController.tableView.reloadData()
     }
 }

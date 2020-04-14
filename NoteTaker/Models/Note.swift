@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Note: Codable {
+class Note  {
     var id = UUID()
-    var text: String
+    var text: NSAttributedString
     var created: Date
     var modified: Date
     
     
-    init(text: String) {
+    init(text: NSAttributedString) {
         self.text = text
         created = Date()
         modified = Date()

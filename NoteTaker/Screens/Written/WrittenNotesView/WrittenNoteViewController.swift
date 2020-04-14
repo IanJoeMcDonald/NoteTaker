@@ -12,8 +12,10 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
     
     
     @IBOutlet weak var textView: UITextView!
+    var coordinator: WrittenCoordinator?
     var selectedColor: UIColor!
     var note: Note!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +27,18 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
-        textView.text = note.text
+        textView.attributedText = note.text
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        note.text = textView.attributedText
+        coordinator?.reloadData()
     }
     
     private func configure() {
         /// Text View
         textView.font = UIFont(name: "Symbol", size: 14)
+        textView.delegate = self
         
         /// Color
         selectedColor = UIColor(forName: ColorConstants.grayscale, shade: 11)
@@ -107,11 +115,27 @@ extension WrittenNoteViewController: NTTextViewTolbarDelegate {
     
     func resignFirstResponder() {
         textView.resignFirstResponder()
-        note.text = textView.text
+        note.text = textView.attributedText
     }
     
     func showKeyboard() {
         textView.becomeFirstResponder()
     }
+}
+
+extension WrittenNoteViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        note.text = textView.attributedText
+        coordinator?.reloadData()
+    }
     
+    func textViewDidChange(_ textView: UITextView) {
+        let oldStart = note.text.string.prefix(50)
+        let newStart = textView.text.prefix(50)
+        note.text = textView.attributedText
+        
+        if oldStart != newStart {
+            coordinator?.reloadData()
+        }
+    }
 }

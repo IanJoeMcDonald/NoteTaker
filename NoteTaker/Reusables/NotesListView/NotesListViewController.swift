@@ -29,7 +29,7 @@ class NotesListViewController: UITableViewController, Storyboarded {
     }
     
     @objc private func addNewNote() {
-        let note = Note(text: "")
+        let note = Note(text: NSAttributedString(string: ""))
         notes.append(note)
         tableView.reloadData()
         tableView.selectRow(at: IndexPath(row: notes.count - 1, section: 0), animated: true,
@@ -48,7 +48,7 @@ extension NotesListViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text = notes[indexPath.row].text
+        cell.textLabel?.text = notes[indexPath.row].text.string
         return cell
     }
     
