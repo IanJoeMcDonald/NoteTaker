@@ -14,7 +14,7 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
     @IBOutlet weak var textView: UITextView!
     var coordinator: WrittenCoordinator?
     var selectedColor: UIColor!
-    var note: Note!
+    var note: WrittenNote!
     
     
     override func viewDidLoad() {
@@ -127,10 +127,11 @@ extension WrittenNoteViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         note.text = textView.attributedText
         coordinator?.reloadData()
+        PersistanceService.saveContext()
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        let oldStart = note.text.string.prefix(50)
+        let oldStart = note.text?.string.prefix(50)
         let newStart = textView.text.prefix(50)
         note.text = textView.attributedText
         
