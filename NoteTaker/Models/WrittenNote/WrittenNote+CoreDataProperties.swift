@@ -1,0 +1,25 @@
+//
+//  WrittenNote+CoreDataProperties.swift
+//  NoteTaker
+//
+//  Created by Ian McDonald on 15/04/20.
+//  Copyright © 2020 Ian McDonald. All rights reserved.
+//
+//
+
+import Foundation
+import CoreData
+
+
+extension WrittenNote {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<WrittenNote> {
+        return NSFetchRequest<WrittenNote>(entityName: "WrittenNote")
+    }
+
+    @NSManaged public var created: Date?
+    @NSManaged public var id: UUID?
+    @NSManaged public var modified: Date?
+    @NSManaged public var text: NSAttributedString?
+
+}
