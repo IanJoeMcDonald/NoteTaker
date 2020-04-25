@@ -33,7 +33,7 @@ class NotesListViewController: UIViewController, Storyboarded {
     private func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.tableFooterView = UIView(frame: .zero)
     }
     
@@ -80,8 +80,21 @@ extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let note = notes[indexPath.row]
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm, d MMM y"
+        var modifiedString = "Unknown"
+        var createdString = "Unknown"
+        if let modifiedDate = note.modified {
+            modifiedString = formatter.string(from: modifiedDate)
+        }
+        if let createdDate = note.created {
+            createdString = formatter.string(from: createdDate)
+        }
 
-        cell.textLabel?.text = notes[indexPath.row].title
+        cell.textLabel?.text = note.title
+        cell.detailTextLabel?.text = "Last Modified: \(modifiedString), Created: \(createdString)"
         return cell
     }
     

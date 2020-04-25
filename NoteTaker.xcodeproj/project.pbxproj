@@ -12,7 +12,7 @@
 		9A1701E0243D3CB200ECC036 /* NTColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1701DF243D3CB200ECC036 /* NTColorPickerDelegate.swift */; };
 		9A19EDFB245481B400DA7DC1 /* EmptyScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A19EDFA245481B400DA7DC1 /* EmptyScreenView.storyboard */; };
 		9A19EDFD2454827900DA7DC1 /* EmptyScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EDFC2454827900DA7DC1 /* EmptyScreenViewController.swift */; };
-		9A19EDFF2454A43A00DA7DC1 /* WrittenNote+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EDFE2454A43A00DA7DC1 /* WrittenNote+CoreDataProperties.swift */; };
+		9A19EE012454B12C00DA7DC1 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE002454B12B00DA7DC1 /* SubtitleTableViewCell.swift */; };
 		9A39997D244210CC00B6C685 /* NTTextViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */; };
 		9A39997F244216F900B6C685 /* NTTextViewToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */; };
 		9A399A262447E77900B6C685 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A399A252447E77900B6C685 /* PersistanceService.swift */; };
@@ -64,7 +64,7 @@
 		9A1701DF243D3CB200ECC036 /* NTColorPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTColorPickerDelegate.swift; sourceTree = "<group>"; };
 		9A19EDFA245481B400DA7DC1 /* EmptyScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmptyScreenView.storyboard; sourceTree = "<group>"; };
 		9A19EDFC2454827900DA7DC1 /* EmptyScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScreenViewController.swift; sourceTree = "<group>"; };
-		9A19EDFE2454A43A00DA7DC1 /* WrittenNote+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "WrittenNote+CoreDataProperties.swift"; path = "NoteTaker/Models/WrittenNote/WrittenNote+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9A19EE002454B12B00DA7DC1 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbar.swift; sourceTree = "<group>"; };
 		9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbarDelegate.swift; sourceTree = "<group>"; };
 		9A399A252447E77900B6C685 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 		9A58AB3724354B6F0087609D = {
 			isa = PBXGroup;
 			children = (
-				9A19EDFE2454A43A00DA7DC1 /* WrittenNote+CoreDataProperties.swift */,
 				9A58AB4224354B6F0087609D /* NoteTaker */,
 				9A58AB5C24354B740087609D /* NoteTakerTests */,
 				9A58AB6724354B740087609D /* NoteTakerUITests */,
@@ -282,6 +281,7 @@
 			children = (
 				9A58AB7E243558610087609D /* NotesListView.storyboard */,
 				9A58AB80243558DB0087609D /* NotesListViewController.swift */,
+				9A19EE002454B12B00DA7DC1 /* SubtitleTableViewCell.swift */,
 			);
 			path = NotesListView;
 			sourceTree = "<group>";
@@ -446,6 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A19EE012454B12C00DA7DC1 /* SubtitleTableViewCell.swift in Sources */,
 				9AC7E04C243FDF6A0092FE06 /* UIColorExtension.swift in Sources */,
 				9A19EDFD2454827900DA7DC1 /* EmptyScreenViewController.swift in Sources */,
 				9A58AB4424354B6F0087609D /* AppDelegate.swift in Sources */,
@@ -467,7 +468,6 @@
 				9A58AB4E24354B6F0087609D /* NoteTaker.xcdatamodeld in Sources */,
 				9A62C8CC2438D48E00746F07 /* WrittenCoordinator.swift in Sources */,
 				9A58AB81243558DB0087609D /* NotesListViewController.swift in Sources */,
-				9A19EDFF2454A43A00DA7DC1 /* WrittenNote+CoreDataProperties.swift in Sources */,
 				9A399A262447E77900B6C685 /* PersistanceService.swift in Sources */,
 				9A58AB8524355A1D0087609D /* Storyboarded.swift in Sources */,
 			);
