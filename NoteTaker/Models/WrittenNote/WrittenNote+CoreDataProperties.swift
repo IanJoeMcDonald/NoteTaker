@@ -2,7 +2,7 @@
 //  WrittenNote+CoreDataProperties.swift
 //  NoteTaker
 //
-//  Created by Ian McDonald on 15/04/20.
+//  Created by Ian McDonald on 25/04/20.
 //  Copyright © 2020 Ian McDonald. All rights reserved.
 //
 //
@@ -21,5 +21,6 @@ extension WrittenNote {
     @NSManaged public var id: UUID?
     @NSManaged public var modified: Date?
     @NSManaged public var text: NSAttributedString?
+    @NSManaged public var title: String?
 
 }
