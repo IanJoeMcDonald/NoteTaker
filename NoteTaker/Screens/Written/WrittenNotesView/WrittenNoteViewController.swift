@@ -28,6 +28,7 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.setNavigationBarHidden(false, animated: true)
         textView.attributedText = note.text
+        title = note.title
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -127,16 +128,19 @@ extension WrittenNoteViewController: NTTextViewTolbarDelegate {
 extension WrittenNoteViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         note.text = textView.attributedText
+        note.modified = Date()
         coordinator?.reloadData()
         PersistanceService.saveContext()
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        let oldStart = note.text?.string.prefix(50)
-        let newStart = textView.text.prefix(50)
-        note.text = textView.attributedText
+        guard let oldTitle = note.title else { return }
+        let start = textView.text.prefix(50)
+        let startBrokenByNewLines = start.components(separatedBy: "\n")
+        note.title = startBrokenByNewLines[0]
+        title = note.title
         
-        if oldStart != newStart {
+        if oldTitle != start {
             coordinator?.reloadData()
         }
     }
