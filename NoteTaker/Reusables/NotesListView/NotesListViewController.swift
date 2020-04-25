@@ -9,25 +9,40 @@
 import UIKit
 import CoreData
 
-class NotesListViewController: UITableViewController, Storyboarded {
+class NotesListViewController: UIViewController, Storyboarded {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addButton: UIButton!
+    
     var coordinator: WrittenCoordinator?
     var notes = [WrittenNote]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add,
-                                                            target: self,
-                                                            action: #selector(addNewNote))
+        configureTableView()
+        configureAddButton()
         loadNotes()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    private func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.tableFooterView = UIView(frame: .zero)
+    }
+    
+    private func configureAddButton() {
+        addButton.layer.cornerRadius = addButton.bounds.height / 2
+        addButton.backgroundColor = .systemBlue
+        addButton.setTitleColor(.white, for: .normal)
+        addButton.clipsToBounds = true
+        addButton.addTarget(self, action: #selector(addNewNote), for: .touchUpInside)
     }
     
     private func loadNotes() {
@@ -46,6 +61,7 @@ class NotesListViewController: UITableViewController, Storyboarded {
         note.modified = Date()
         note.id = UUID()
         note.text = NSAttributedString(string: "")
+        note.title = "New Note"
         notes.append(note)
         PersistanceService.saveContext()
         tableView.reloadData()
@@ -56,20 +72,20 @@ class NotesListViewController: UITableViewController, Storyboarded {
     
 }
 
-extension NotesListViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return notes.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text = notes[indexPath.row].text?.string
+        cell.textLabel?.text = notes[indexPath.row].title
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coordinator?.showDetailView(with: notes[indexPath.row])
     }
 }
