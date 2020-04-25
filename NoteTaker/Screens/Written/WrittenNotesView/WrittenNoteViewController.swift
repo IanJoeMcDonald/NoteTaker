@@ -73,6 +73,7 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
         let selectedRange = textView.selectedRange
         string.setFont(font, for: selectedRange)
         textView.attributedText = string
+        textView.becomeFirstResponder()
         textView.selectedRange = selectedRange
     }
     

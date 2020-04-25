@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8ol-MB-iBR">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Empty Screen View Controller-->
+        <scene sceneID="MlP-e0-bl1">
+            <objects>
+                <viewController id="8ol-MB-iBR" customClass="EmptyScreenViewController" customModule="NoteTaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jy6-i4-eDZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sbm-rv-PSq">
+                                <rect key="frame" x="10" y="134" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sbm-rv-PSq" secondAttribute="height" multiplier="1:1" id="R6s-z8-htK"/>
+                                    <constraint firstAttribute="width" constant="414" id="WDF-jo-xrw"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WDF-jo-xrw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="WDF-jo-xrw"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Note Selected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4h-of-6fY">
+                                <rect key="frame" x="20" y="266" width="280" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="m4h-of-6fY" firstAttribute="trailing" secondItem="wQN-wU-6YA" secondAttribute="trailing" constant="-20" id="1EK-se-rgM"/>
+                            <constraint firstItem="sbm-rv-PSq" firstAttribute="centerX" secondItem="wQN-wU-6YA" secondAttribute="centerX" id="6bQ-th-Yge"/>
+                            <constraint firstItem="m4h-of-6fY" firstAttribute="centerY" secondItem="jy6-i4-eDZ" secondAttribute="centerY" id="CSm-x6-A2U"/>
+                            <constraint firstItem="sbm-rv-PSq" firstAttribute="top" secondItem="wQN-wU-6YA" secondAttribute="top" constant="10" id="GGN-qt-dPQ"/>
+                            <constraint firstItem="m4h-of-6fY" firstAttribute="leading" secondItem="wQN-wU-6YA" secondAttribute="leading" constant="20" id="LbK-lp-UtH"/>
+                            <constraint firstItem="sbm-rv-PSq" firstAttribute="leading" secondItem="wQN-wU-6YA" secondAttribute="leading" constant="10" id="SVb-dQ-WS4"/>
+                            <constraint firstItem="sbm-rv-PSq" firstAttribute="centerY" secondItem="wQN-wU-6YA" secondAttribute="centerY" id="gAy-vd-BSL"/>
+                            <constraint firstItem="sbm-rv-PSq" firstAttribute="bottom" secondItem="wQN-wU-6YA" secondAttribute="bottom" constant="10" id="ivp-4R-Yi3"/>
+                            <constraint firstItem="sbm-rv-PSq" firstAttribute="trailing" secondItem="wQN-wU-6YA" secondAttribute="trailing" constant="-10" id="k7w-g5-B7v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wQN-wU-6YA"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6bQ-th-Yge"/>
+                                <exclude reference="GGN-qt-dPQ"/>
+                                <exclude reference="SVb-dQ-WS4"/>
+                                <exclude reference="gAy-vd-BSL"/>
+                                <exclude reference="ivp-4R-Yi3"/>
+                                <exclude reference="k7w-g5-B7v"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <include reference="6bQ-th-Yge"/>
+                                <include reference="GGN-qt-dPQ"/>
+                                <include reference="ivp-4R-Yi3"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="gAy-vd-BSL"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="SVb-dQ-WS4"/>
+                                <include reference="k7w-g5-B7v"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="6bQ-th-Yge"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="sbm-rv-PSq" id="fRr-J1-cen"/>
+                        <outlet property="textLabel" destination="m4h-of-6fY" id="EoA-yQ-qjI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mhu-Vy-vYK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="123" y="145"/>
+        </scene>
+    </scenes>
+</document>

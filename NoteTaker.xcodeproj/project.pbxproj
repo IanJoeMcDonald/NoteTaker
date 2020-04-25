@@ -10,6 +10,8 @@
 		9A1701D5243A823900ECC036 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A1701D4243A823900ECC036 /* Colors.xcassets */; };
 		9A1701DE243BF80C00ECC036 /* NTColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1701DD243BF80C00ECC036 /* NTColorPickerView.swift */; };
 		9A1701E0243D3CB200ECC036 /* NTColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1701DF243D3CB200ECC036 /* NTColorPickerDelegate.swift */; };
+		9A19EDFB245481B400DA7DC1 /* EmptyScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A19EDFA245481B400DA7DC1 /* EmptyScreenView.storyboard */; };
+		9A19EDFD2454827900DA7DC1 /* EmptyScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EDFC2454827900DA7DC1 /* EmptyScreenViewController.swift */; };
 		9A39997D244210CC00B6C685 /* NTTextViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */; };
 		9A39997F244216F900B6C685 /* NTTextViewToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */; };
 		9A399A262447E77900B6C685 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A399A252447E77900B6C685 /* PersistanceService.swift */; };
@@ -59,6 +61,8 @@
 		9A1701D4243A823900ECC036 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		9A1701DD243BF80C00ECC036 /* NTColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTColorPickerView.swift; sourceTree = "<group>"; };
 		9A1701DF243D3CB200ECC036 /* NTColorPickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTColorPickerDelegate.swift; sourceTree = "<group>"; };
+		9A19EDFA245481B400DA7DC1 /* EmptyScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmptyScreenView.storyboard; sourceTree = "<group>"; };
+		9A19EDFC2454827900DA7DC1 /* EmptyScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScreenViewController.swift; sourceTree = "<group>"; };
 		9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbar.swift; sourceTree = "<group>"; };
 		9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbarDelegate.swift; sourceTree = "<group>"; };
 		9A399A252447E77900B6C685 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -125,6 +129,15 @@
 				9A1701DF243D3CB200ECC036 /* NTColorPickerDelegate.swift */,
 			);
 			path = ColorPickerView;
+			sourceTree = "<group>";
+		};
+		9A19EDF92454819500DA7DC1 /* EmptyScreen */ = {
+			isa = PBXGroup;
+			children = (
+				9A19EDFA245481B400DA7DC1 /* EmptyScreenView.storyboard */,
+				9A19EDFC2454827900DA7DC1 /* EmptyScreenViewController.swift */,
+			);
+			path = EmptyScreen;
 			sourceTree = "<group>";
 		};
 		9A39997924420E2800B6C685 /* TextToolBarView */ = {
@@ -247,6 +260,7 @@
 				9A62C8A32437F50B00746F07 /* CoordinatedNavController.swift */,
 				9A8DC15B2438EBDF00C5D18C /* NotesListView */,
 				9AC7E049243FD9960092FE06 /* NTMonitoredImageView.swift */,
+				9A19EDF92454819500DA7DC1 /* EmptyScreen */,
 			);
 			path = Reusables;
 			sourceTree = "<group>";
@@ -402,6 +416,7 @@
 				9A1701D5243A823900ECC036 /* Colors.xcassets in Resources */,
 				9A58AB7F243558610087609D /* NotesListView.storyboard in Resources */,
 				9A58AB5324354B730087609D /* LaunchScreen.storyboard in Resources */,
+				9A19EDFB245481B400DA7DC1 /* EmptyScreenView.storyboard in Resources */,
 				9A58AB5024354B730087609D /* Assets.xcassets in Resources */,
 				9A58AB7B243555B00087609D /* WrittenNoteView.storyboard in Resources */,
 			);
@@ -429,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC7E04C243FDF6A0092FE06 /* UIColorExtension.swift in Sources */,
+				9A19EDFD2454827900DA7DC1 /* EmptyScreenViewController.swift in Sources */,
 				9A58AB4424354B6F0087609D /* AppDelegate.swift in Sources */,
 				9A399A2A2447E8CC00B6C685 /* WrittenNote+CoreDataProperties.swift in Sources */,
 				9A39997F244216F900B6C685 /* NTTextViewToolbarDelegate.swift in Sources */,

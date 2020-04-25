@@ -12,7 +12,7 @@ class WrittenCoordinator: Coordinator {
     var splitViewController = UISplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
     
-    var notesListViewController = NotesListViewController()
+    var notesListViewController = NotesListViewController.instantiate()
     
     init() {
         primaryNavigationController.coordinator = self
@@ -20,13 +20,13 @@ class WrittenCoordinator: Coordinator {
         notesListViewController.coordinator = self
         primaryNavigationController.viewControllers = [notesListViewController]
         
-        let detailViewController = WrittenNoteViewController.instantiate()
+        let detailViewController = EmptyScreenViewController.instantiate()
         
         let detailNav = CoordinatedNavigationController(rootViewController: detailViewController)
         detailNav.coordinator = self
         splitViewController.viewControllers = [primaryNavigationController, detailNav]
         splitViewController.delegate = SplitViewControllerDelegate.shared
-        splitViewController.preferredDisplayMode = .primaryOverlay
+        splitViewController.preferredDisplayMode = .allVisible
     }
     
     func showDetailView(with note: WrittenNote) {
@@ -35,6 +35,7 @@ class WrittenCoordinator: Coordinator {
         detailVc.coordinator = self
         detailVc.note = note
         splitViewController.showDetailViewController(detailNav, sender: self)
+        splitViewController.preferredDisplayMode = .primaryHidden
     }
     
     func reloadData() {
