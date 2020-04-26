@@ -13,6 +13,7 @@
 		9A19EDFB245481B400DA7DC1 /* EmptyScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A19EDFA245481B400DA7DC1 /* EmptyScreenView.storyboard */; };
 		9A19EDFD2454827900DA7DC1 /* EmptyScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EDFC2454827900DA7DC1 /* EmptyScreenViewController.swift */; };
 		9A19EE012454B12C00DA7DC1 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE002454B12B00DA7DC1 /* SubtitleTableViewCell.swift */; };
+		9A19EE03245649B700DA7DC1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE02245649B700DA7DC1 /* DateExtension.swift */; };
 		9A39997D244210CC00B6C685 /* NTTextViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */; };
 		9A39997F244216F900B6C685 /* NTTextViewToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */; };
 		9A399A262447E77900B6C685 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A399A252447E77900B6C685 /* PersistanceService.swift */; };
@@ -65,6 +66,7 @@
 		9A19EDFA245481B400DA7DC1 /* EmptyScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmptyScreenView.storyboard; sourceTree = "<group>"; };
 		9A19EDFC2454827900DA7DC1 /* EmptyScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScreenViewController.swift; sourceTree = "<group>"; };
 		9A19EE002454B12B00DA7DC1 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
+		9A19EE02245649B700DA7DC1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbar.swift; sourceTree = "<group>"; };
 		9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbarDelegate.swift; sourceTree = "<group>"; };
 		9A399A252447E77900B6C685 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			children = (
 				9A39A6AA2438FD4700D57B89 /* NSMutableAttributedStringExtension.swift */,
 				9AC7E04B243FDF6A0092FE06 /* UIColorExtension.swift */,
+				9A19EE02245649B700DA7DC1 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				9A58AB4624354B6F0087609D /* SceneDelegate.swift in Sources */,
 				9A1701DE243BF80C00ECC036 /* NTColorPickerView.swift in Sources */,
 				9A58AB83243559E10087609D /* Coordinator.swift in Sources */,
+				9A19EE03245649B700DA7DC1 /* DateExtension.swift in Sources */,
 				9AC7E04A243FD9960092FE06 /* NTMonitoredImageView.swift in Sources */,
 				9A62C8A42437F50B00746F07 /* CoordinatedNavController.swift in Sources */,
 				9A1701E0243D3CB200ECC036 /* NTColorPickerDelegate.swift in Sources */,

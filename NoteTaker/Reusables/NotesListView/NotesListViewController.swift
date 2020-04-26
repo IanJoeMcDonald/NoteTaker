@@ -74,27 +74,21 @@ class NotesListViewController: UIViewController, Storyboarded {
 
 extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return notes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let note = notes[indexPath.row]
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm, d MMM y"
-        var modifiedString = "Unknown"
-        var createdString = "Unknown"
-        if let modifiedDate = note.modified {
-            modifiedString = formatter.string(from: modifiedDate)
-        }
-        if let createdDate = note.created {
-            createdString = formatter.string(from: createdDate)
-        }
+        let note = notes[indexPath.row]
+        let modified = note.modified?.formatStringTodayYesterday(format: "HH:mm",
+                                                                 otherTime: "d MMM y, HH:mm")
+                                                                 ?? "Unknown"
+        let created = note.created?.formatStringTodayYesterday(format: nil,
+                                                               otherTime: "d MMM y") ?? "Unknown"
 
         cell.textLabel?.text = note.title
-        cell.detailTextLabel?.text = "Last Modified: \(modifiedString), Created: \(createdString)"
+        cell.detailTextLabel?.text = "Modified: \(modified), Created: \(created)"
         return cell
     }
     
