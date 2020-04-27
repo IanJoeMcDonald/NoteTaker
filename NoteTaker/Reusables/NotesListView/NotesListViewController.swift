@@ -28,6 +28,7 @@ class NotesListViewController: UIViewController, Storyboarded {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
+        notes.sort(by: { $0.modifiedDate.compare($1.modifiedDate) == .orderedDescending })
     }
     
     private func configureTableView() {
@@ -88,7 +89,7 @@ extension NotesListViewController: UITableViewDelegate, UITableViewDataSource {
                                                                otherTime: "d MMM y") ?? "Unknown"
 
         cell.textLabel?.text = note.title
-        cell.detailTextLabel?.text = "Modified: \(modified), Created: \(created)"
+        cell.detailTextLabel?.text = "Updated: \(modified), Created: \(created)"
         return cell
     }
     

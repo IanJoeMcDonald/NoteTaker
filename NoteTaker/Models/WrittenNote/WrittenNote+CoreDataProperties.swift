@@ -22,5 +22,9 @@ extension WrittenNote {
     @NSManaged public var modified: Date?
     @NSManaged public var text: NSAttributedString?
     @NSManaged public var title: String?
+    
+    var modifiedDate : Date {
+        return modified ?? Date()
+    }
 
 }
