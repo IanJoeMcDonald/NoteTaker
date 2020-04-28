@@ -26,5 +26,13 @@ extension WrittenNote {
     var modifiedDate : Date {
         return modified ?? Date()
     }
+    
+    var unwrappedId : UUID {
+        return id ?? UUID()
+    }
+    
+    var uuidString : String {
+        return id?.uuidString ?? UUID().uuidString
+    }
 
 }

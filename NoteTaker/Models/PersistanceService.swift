@@ -58,4 +58,10 @@ class PersistanceService {
             }
         }
     }
+    
+    static func deleteNote(_ note: WrittenNote) {
+        let context = persistentContainer.viewContext
+        context.delete(note)
+        saveContext()
+    }
 }

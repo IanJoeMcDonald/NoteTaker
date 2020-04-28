@@ -53,6 +53,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="s1i-dk-i9L" eventType="touchUpInside" id="48B-C9-HaT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
