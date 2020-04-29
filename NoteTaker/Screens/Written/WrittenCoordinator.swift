@@ -35,10 +35,9 @@ class WrittenCoordinator: Coordinator {
         detailVc.coordinator = self
         detailVc.note = note
         splitViewController.showDetailViewController(detailNav, sender: self)
-        UIView.animate(withDuration: 0.5) {
-            self.splitViewController.preferredDisplayMode = .primaryHidden
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            self?.splitViewController.preferredDisplayMode = .primaryHidden
         }
-        //splitViewController.preferredDisplayMode = .primaryHidden
     }
     
     func reloadData() {
