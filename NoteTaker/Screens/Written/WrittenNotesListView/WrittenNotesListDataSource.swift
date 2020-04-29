@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class NotesListDataSource: NSObject {
-    var delegate: NotesListDataSourceDelegate?
-    var persistanceDelegate: NotesListDataSourcePersistanceDelegate?
+class WrittenNotesListDataSource: NSObject {
+    var delegate: WrittenNotesListDataSourceDelegate?
+    var persistanceDelegate: WrittenNotesListDataSourcePersistanceDelegate?
     
     var notesCount: Int {
         return notes.count
@@ -75,7 +75,7 @@ class NotesListDataSource: NSObject {
     }
 }
 
-extension NotesListDataSource: UITableViewDataSource {
+extension WrittenNotesListDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.count
     }
@@ -107,14 +107,14 @@ extension NotesListDataSource: UITableViewDataSource {
     }
 }
 
-protocol NotesListDataSourceDelegate {
+protocol WrittenNotesListDataSourceDelegate {
     func updateTableView()
     func removeRowInTable(at index: Int)
     func insertRowInTable(at index: Int)
     func selectRowInTable(at index: Int)
 }
 
-protocol NotesListDataSourcePersistanceDelegate {
+protocol WrittenNotesListDataSourcePersistanceDelegate {
     func saveContext()
     func deleteNote(_ note: WrittenNote)
 }

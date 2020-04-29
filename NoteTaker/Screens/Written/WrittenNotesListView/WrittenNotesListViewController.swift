@@ -1,5 +1,5 @@
 //
-//  NotesListViewController.swift
+//  WrittenNotesListViewController.swift
 //  NoteTaker
 //
 //  Created by Ian McDonald on 01/04/20.
@@ -9,13 +9,13 @@
 import UIKit
 import CoreData
 
-class NotesListViewController: UIViewController, Storyboarded {
+class WrittenNotesListViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
     
     var coordinator: WrittenCoordinator?
-    var dataSource: NotesListDataSource!
+    var dataSource: WrittenNotesListDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class NotesListViewController: UIViewController, Storyboarded {
     }
     
     private func configureTableView() {
-        dataSource = NotesListDataSource()
+        dataSource = WrittenNotesListDataSource()
         dataSource.delegate = self
         dataSource.persistanceDelegate = self
         
@@ -53,13 +53,13 @@ class NotesListViewController: UIViewController, Storyboarded {
     }
 }
 
-extension NotesListViewController: UITableViewDelegate{
+extension WrittenNotesListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         coordinator?.showDetailView(with: dataSource.note(at: indexPath.row))
     }
 }
 
-extension NotesListViewController: NotesListDataSourceDelegate {
+extension WrittenNotesListViewController: WrittenNotesListDataSourceDelegate {
     func updateTableView() {
         tableView.reloadData()
     }
@@ -79,7 +79,7 @@ extension NotesListViewController: NotesListDataSourceDelegate {
     }
 }
 
-extension NotesListViewController: NotesListDataSourcePersistanceDelegate {
+extension WrittenNotesListViewController: WrittenNotesListDataSourcePersistanceDelegate {
     func saveContext() {
         PersistanceService.saveContext()
     }

@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Notes List View Controller-->
+        <!--Written Notes List View Controller-->
         <scene sceneID="Kh2-YI-v9v">
             <objects>
-                <viewController id="s1i-dk-i9L" customClass="NotesListViewController" customModule="NoteTaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="s1i-dk-i9L" customClass="WrittenNotesListViewController" customModule="NoteTaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4j-Fa-17Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

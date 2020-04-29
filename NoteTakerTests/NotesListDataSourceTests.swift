@@ -46,8 +46,6 @@ class NotesListDataSourceTests: XCTestCase {
     
     func testNoteReturnsTheCorrectNote() {
         // given
-        
-        // when
         let note1 = WrittenNote(context: context)
         note1.id = UUID()
         note1.title = "Title 1"
@@ -62,6 +60,7 @@ class NotesListDataSourceTests: XCTestCase {
         note2.created = Date()
         note2.modified = Date()
         
+        // when
         sut.addNote(note1)
         sut.addNote(note2)
         
@@ -85,8 +84,6 @@ class NotesListDataSourceTests: XCTestCase {
     
     func testSortDataOrdersByModifiedDate() {
         // given
-        
-        // when
         let note1 = WrittenNote(context: context)
         note1.id = UUID()
         note1.title = "Title 1"
@@ -103,6 +100,7 @@ class NotesListDataSourceTests: XCTestCase {
         note2.created = Date()
         note2.modified = Date()
         
+        // when
         sut.addNote(note1)
         sut.addNote(note2)
         sut.sortData()

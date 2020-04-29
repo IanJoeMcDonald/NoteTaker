@@ -12,7 +12,7 @@ class WrittenCoordinator: Coordinator {
     var splitViewController = UISplitViewController()
     var primaryNavigationController = CoordinatedNavigationController()
     
-    var notesListViewController = NotesListViewController.instantiate()
+    var notesListViewController = WrittenNotesListViewController.instantiate()
     
     init() {
         primaryNavigationController.coordinator = self
