@@ -27,12 +27,13 @@ class NotesListViewController: UIViewController, Storyboarded {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: true)
-        dataSource.sortData()
+        dataSource.fetchData()
     }
     
     private func configureTableView() {
         dataSource = NotesListDataSource()
         dataSource.delegate = self
+        dataSource.persistanceDelegate = self
         
         tableView.delegate = self
         tableView.dataSource = dataSource
@@ -48,7 +49,7 @@ class NotesListViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        dataSource.addNewNote()
+        dataSource.addNote()
     }
 }
 
@@ -75,5 +76,15 @@ extension NotesListViewController: NotesListDataSourceDelegate {
         tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true,
                             scrollPosition: .none)
         tableView(self.tableView, didSelectRowAt: IndexPath(row: index, section: 0))
+    }
+}
+
+extension NotesListViewController: NotesListDataSourcePersistanceDelegate {
+    func saveContext() {
+        PersistanceService.saveContext()
+    }
+    
+    func deleteNote(_ note: WrittenNote) {
+        PersistanceService.deleteNote(note)
     }
 }

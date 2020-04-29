@@ -11,18 +11,27 @@ import CoreData
 
 class NotesListDataSource: NSObject {
     var delegate: NotesListDataSourceDelegate?
+    var persistanceDelegate: NotesListDataSourcePersistanceDelegate?
+    
+    var notesCount: Int {
+        return notes.count
+    }
     
     private var notes = [WrittenNote]()
     
-    override init() {
-        super.init()
-        let fetchRequest: NSFetchRequest<WrittenNote> = WrittenNote.fetchRequest()
+    func fetchData(fromContext context: NSManagedObjectContext? = PersistanceService.context,
+                   request: NSFetchRequest<WrittenNote>? = WrittenNote.fetchRequest()) {
+        guard let context = context, let request = request else {
+            return
+        }
         
-        guard let loadedNotes = try? PersistanceService.context.fetch(fetchRequest) else {
+        guard let loadedNotes = try? context.fetch(request) else {
             return
         }
         
         notes = loadedNotes
+        sortData()
+        delegate?.updateTableView()
     }
     
     func sortData() {
@@ -36,15 +45,19 @@ class NotesListDataSource: NSObject {
         return notes[index]
     }
     
-    func addNewNote() {
-        let note = WrittenNote(context: PersistanceService.context)
+    func addNote(context: NSManagedObjectContext = PersistanceService.context) {
+        let note = WrittenNote(context: context)
         note.created = Date()
         note.modified = Date()
         note.id = UUID()
         note.text = NSAttributedString(string: "")
         note.title = "New Note"
+        addNote(note)
+    }
+    
+    func addNote(_ note: WrittenNote) {
         notes.insert(note, at: 0)
-        PersistanceService.saveContext()
+        persistanceDelegate?.saveContext()
         sortData()
         delegate?.insertRowInTable(at: 0)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
@@ -57,7 +70,7 @@ class NotesListDataSource: NSObject {
             fatalError("Invalid index selected in tableView")
         }
         let deletedNote = notes.remove(at: index)
-        PersistanceService.deleteNote(deletedNote)
+        persistanceDelegate?.deleteNote(deletedNote)
         delegate?.removeRowInTable(at: index)
     }
 }
@@ -72,10 +85,10 @@ extension NotesListDataSource: UITableViewDataSource {
         
         let note = notes[indexPath.row]
         let modified = note.modified?.formatStringTodayYesterday(format: "HH:mm",
-                                                                 otherTime: "d MMM y, HH:mm")
+                                                                 otherTime: "d MMM yy, HH:mm")
                                                                  ?? "Unknown"
         let created = note.created?.formatStringTodayYesterday(format: nil,
-                                                               otherTime: "d MMM y") ?? "Unknown"
+                                                               otherTime: "d MMM yy") ?? "Unknown"
 
         cell.textLabel?.text = note.title
         cell.detailTextLabel?.text = "Updated: \(modified), Created: \(created)"
@@ -99,4 +112,9 @@ protocol NotesListDataSourceDelegate {
     func removeRowInTable(at index: Int)
     func insertRowInTable(at index: Int)
     func selectRowInTable(at index: Int)
+}
+
+protocol NotesListDataSourcePersistanceDelegate {
+    func saveContext()
+    func deleteNote(_ note: WrittenNote)
 }

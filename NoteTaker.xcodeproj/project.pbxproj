@@ -15,6 +15,7 @@
 		9A19EE012454B12C00DA7DC1 /* SubtitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE002454B12B00DA7DC1 /* SubtitleTableViewCell.swift */; };
 		9A19EE03245649B700DA7DC1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE02245649B700DA7DC1 /* DateExtension.swift */; };
 		9A19EE0524579B3200DA7DC1 /* NotesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE0424579B3200DA7DC1 /* NotesListDataSource.swift */; };
+		9A19EE082458F17E00DA7DC1 /* NotesListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE072458F17D00DA7DC1 /* NotesListDataSourceTests.swift */; };
 		9A39997D244210CC00B6C685 /* NTTextViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */; };
 		9A39997F244216F900B6C685 /* NTTextViewToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */; };
 		9A399A262447E77900B6C685 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A399A252447E77900B6C685 /* PersistanceService.swift */; };
@@ -69,6 +70,7 @@
 		9A19EE002454B12B00DA7DC1 /* SubtitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubtitleTableViewCell.swift; sourceTree = "<group>"; };
 		9A19EE02245649B700DA7DC1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9A19EE0424579B3200DA7DC1 /* NotesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListDataSource.swift; sourceTree = "<group>"; };
+		9A19EE072458F17D00DA7DC1 /* NotesListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListDataSourceTests.swift; sourceTree = "<group>"; };
 		9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbar.swift; sourceTree = "<group>"; };
 		9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbarDelegate.swift; sourceTree = "<group>"; };
 		9A399A252447E77900B6C685 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				9A58AB5D24354B740087609D /* NoteTakerTests.swift */,
 				9A58AB5F24354B740087609D /* Info.plist */,
+				9A19EE072458F17D00DA7DC1 /* NotesListDataSourceTests.swift */,
 			);
 			path = NoteTakerTests;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A19EE082458F17E00DA7DC1 /* NotesListDataSourceTests.swift in Sources */,
 				9A58AB5E24354B740087609D /* NoteTakerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
