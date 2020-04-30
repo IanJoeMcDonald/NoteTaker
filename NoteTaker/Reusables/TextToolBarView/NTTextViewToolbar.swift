@@ -42,8 +42,11 @@ class NTTextViewToolbar: UIToolbar {
             UIBarButtonItem(title: "Font", style: .plain, target: self,
                             action: #selector(fontTapped)),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
-            UIBarButtonItem(image: image,
-                            style: .plain, target: self, action: #selector(colorTapped)),
+            UIBarButtonItem(barButtonSystemItem: .play, target: self,
+                            action: #selector(playTapped)),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+            UIBarButtonItem(image: image, style: .plain, target: self,
+                            action: #selector(colorTapped)),
             UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
             UIBarButtonItem(barButtonSystemItem: .done, target: self,
                             action: #selector(doneTapped))
@@ -59,6 +62,11 @@ class NTTextViewToolbar: UIToolbar {
         let fpController = UIFontPickerViewController()
         fpController.delegate = self
         toolbarDelegate?.presentVC(fpController, animated: true)
+    }
+    
+    @objc private func playTapped() {
+        print("Play Tapped")
+        toolbarDelegate?.playTextToSpeech()
     }
     
     @objc private func colorTapped() {

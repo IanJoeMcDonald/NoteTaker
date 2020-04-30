@@ -43,6 +43,11 @@ class WrittenNoteViewController: UIViewController, Storyboarded {
         
         /// Color
         selectedColor = UIColor(forName: ColorConstants.grayscale, shade: 11)
+        
+        /// Navigation Bar Items
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .play,
+                                                            target: self,
+                                                            action: #selector(playTextToSpeech))
     }
     
     private func addNotifications() {
@@ -113,6 +118,12 @@ extension WrittenNoteViewController: NTTextViewTolbarDelegate {
     
     func presentVC(_ controller: UIViewController, animated: Bool) {
         self.present(controller, animated: animated)
+    }
+    
+    @objc func playTextToSpeech() {
+        print("Received play tapped")
+        guard let text = note.text?.string else { return }
+        TextToSpeech.say(text)
     }
     
     func resignFirstResponder() {
