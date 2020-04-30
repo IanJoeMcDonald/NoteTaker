@@ -45,7 +45,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wh-cf-9fo">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wh-cf-9fo" customClass="FloatingCircleButton" customModule="NoteTaker" customModuleProvider="target">
                                 <rect key="frame" x="344" y="826" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aNA-48-yFm"/>

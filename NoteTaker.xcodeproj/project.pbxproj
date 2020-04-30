@@ -17,6 +17,7 @@
 		9A19EE0524579B3200DA7DC1 /* WrittenNotesListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE0424579B3200DA7DC1 /* WrittenNotesListDataSource.swift */; };
 		9A19EE082458F17E00DA7DC1 /* NotesListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE072458F17D00DA7DC1 /* NotesListDataSourceTests.swift */; };
 		9A19EE0E245A500800DA7DC1 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE0D245A500800DA7DC1 /* TextToSpeech.swift */; };
+		9A19EE11245B99A000DA7DC1 /* FloatingCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE10245B999F00DA7DC1 /* FloatingCircleButton.swift */; };
 		9A39997D244210CC00B6C685 /* NTTextViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */; };
 		9A39997F244216F900B6C685 /* NTTextViewToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */; };
 		9A399A262447E77900B6C685 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A399A252447E77900B6C685 /* PersistanceService.swift */; };
@@ -73,6 +74,7 @@
 		9A19EE0424579B3200DA7DC1 /* WrittenNotesListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittenNotesListDataSource.swift; sourceTree = "<group>"; };
 		9A19EE072458F17D00DA7DC1 /* NotesListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListDataSourceTests.swift; sourceTree = "<group>"; };
 		9A19EE0D245A500800DA7DC1 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		9A19EE10245B999F00DA7DC1 /* FloatingCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCircleButton.swift; sourceTree = "<group>"; };
 		9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbar.swift; sourceTree = "<group>"; };
 		9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbarDelegate.swift; sourceTree = "<group>"; };
 		9A399A252447E77900B6C685 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -165,6 +167,14 @@
 				9A58AB4524354B6F0087609D /* SceneDelegate.swift */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		9A19EE0F245B997000DA7DC1 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				9A19EE10245B999F00DA7DC1 /* FloatingCircleButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		9A39997924420E2800B6C685 /* TextToolBarView */ = {
@@ -280,6 +290,7 @@
 		9A8DC1592438EB8200C5D18C /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				9A19EE0F245B997000DA7DC1 /* Buttons */,
 				9A39997924420E2800B6C685 /* TextToolBarView */,
 				9A1701DA243BF7B700ECC036 /* ColorPickerView */,
 				9A62C8A32437F50B00746F07 /* CoordinatedNavController.swift */,
@@ -477,6 +488,7 @@
 				9A19EE0524579B3200DA7DC1 /* WrittenNotesListDataSource.swift in Sources */,
 				9A19EE012454B12C00DA7DC1 /* SubtitleTableViewCell.swift in Sources */,
 				9AC7E04C243FDF6A0092FE06 /* UIColorExtension.swift in Sources */,
+				9A19EE11245B99A000DA7DC1 /* FloatingCircleButton.swift in Sources */,
 				9A19EDFD2454827900DA7DC1 /* EmptyScreenViewController.swift in Sources */,
 				9A58AB4424354B6F0087609D /* AppDelegate.swift in Sources */,
 				9A399A2A2447E8CC00B6C685 /* WrittenNote+CoreDataProperties.swift in Sources */,

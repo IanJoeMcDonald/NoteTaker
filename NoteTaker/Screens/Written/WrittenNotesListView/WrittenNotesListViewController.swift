@@ -12,7 +12,7 @@ import CoreData
 class WrittenNotesListViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var addButton: FloatingCircleButton!
     
     var coordinator: WrittenCoordinator?
     var dataSource: WrittenNotesListDataSource!
@@ -20,7 +20,6 @@ class WrittenNotesListViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        configureAddButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,13 +38,6 @@ class WrittenNotesListViewController: UIViewController, Storyboarded {
         tableView.dataSource = dataSource
         tableView.register(SubtitleTableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.tableFooterView = UIView(frame: .zero)
-    }
-    
-    private func configureAddButton() {
-        addButton.layer.cornerRadius = addButton.bounds.height / 2
-        addButton.backgroundColor = .systemBlue
-        addButton.setTitleColor(.white, for: .normal)
-        addButton.clipsToBounds = true
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
