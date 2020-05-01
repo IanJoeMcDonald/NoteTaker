@@ -85,13 +85,14 @@ extension WrittenNotesListDataSource: UITableViewDataSource {
         
         let note = notes[indexPath.row]
         let modified = note.modified?.formatStringTodayYesterday(format: "HH:mm",
-                                                                 otherTime: "d MMM yy, HH:mm")
+                                                                 otherTime: "d MMM y, HH:mm")
                                                                  ?? "Unknown"
         let created = note.created?.formatStringTodayYesterday(format: nil,
-                                                               otherTime: "d MMM yy") ?? "Unknown"
+                                                               otherTime: "d MMM y") ?? "Unknown"
 
         cell.textLabel?.text = note.title
-        cell.detailTextLabel?.text = "Updated: \(modified), Created: \(created)"
+        cell.detailTextLabel?.numberOfLines = 2
+        cell.detailTextLabel?.text = "Updated: \(modified)\nCreated: \(created)"
         return cell
     }
     
