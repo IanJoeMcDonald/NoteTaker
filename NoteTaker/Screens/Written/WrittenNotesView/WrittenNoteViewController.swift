@@ -121,7 +121,7 @@ extension WrittenNoteViewController: NTTextViewTolbarDelegate {
     }
     
     @objc func playTextToSpeech() {
-        print("Received play tapped")
+        note.text = textView.attributedText
         guard let text = note.text?.string else { return }
         TextToSpeech.say(text)
     }

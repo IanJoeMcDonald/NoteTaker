@@ -11,10 +11,12 @@ import AVFoundation
 
 class TextToSpeech {
     
+    static let speechSynthesizer = AVSpeechSynthesizer()
+    
     static func say(_ text: String) {
-        let speechSynthesizer = AVSpeechSynthesizer()
-        let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
-
-        speechSynthesizer.speak(speechUtterance)
+        if !speechSynthesizer.isSpeaking {
+            let speechUtterance: AVSpeechUtterance = AVSpeechUtterance(string: text)
+            speechSynthesizer.speak(speechUtterance)
+        }
     }
 }
