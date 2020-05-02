@@ -13,6 +13,8 @@ class EmptyScreenViewController: UIViewController, Storyboarded {
     @IBOutlet weak var textLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    var imageName: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +28,8 @@ class EmptyScreenViewController: UIViewController, Storyboarded {
         """
         
         let imageWeight = UIImage.SymbolConfiguration(weight: .ultraLight)
-        imageView.image = UIImage(systemName: "doc.text", withConfiguration: imageWeight)
+        imageView.image = UIImage(systemName: imageName,
+                                  withConfiguration: imageWeight)
         imageView.tintColor = .systemGray6
     }
 }
