@@ -10,13 +10,11 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     let written = WrittenCoordinator()
+    let audio = AudioCoordinator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewControllers = [written.splitViewController]
-        
-        /// Currently the app only has 1 tab for written notes. In the future this will be expanded. Until this happens hide the tab bar
-        tabBar.isHidden = true
+        viewControllers = [written.splitViewController, audio.splitViewController]
     }
 }

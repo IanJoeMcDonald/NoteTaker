@@ -18,6 +18,9 @@
 		9A19EE082458F17E00DA7DC1 /* NotesListDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE072458F17D00DA7DC1 /* NotesListDataSourceTests.swift */; };
 		9A19EE0E245A500800DA7DC1 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE0D245A500800DA7DC1 /* TextToSpeech.swift */; };
 		9A19EE11245B99A000DA7DC1 /* FloatingCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE10245B999F00DA7DC1 /* FloatingCircleButton.swift */; };
+		9A19EE16245D77EB00DA7DC1 /* AudioCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE15245D77EB00DA7DC1 /* AudioCoordinator.swift */; };
+		9A19EE19245D792200DA7DC1 /* AudioNotesListView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A19EE18245D792200DA7DC1 /* AudioNotesListView.storyboard */; };
+		9A19EE1B245D795200DA7DC1 /* AudioNotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19EE1A245D795200DA7DC1 /* AudioNotesListViewController.swift */; };
 		9A39997D244210CC00B6C685 /* NTTextViewToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */; };
 		9A39997F244216F900B6C685 /* NTTextViewToolbarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */; };
 		9A399A262447E77900B6C685 /* PersistanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A399A252447E77900B6C685 /* PersistanceService.swift */; };
@@ -74,6 +77,9 @@
 		9A19EE072458F17D00DA7DC1 /* NotesListDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesListDataSourceTests.swift; sourceTree = "<group>"; };
 		9A19EE0D245A500800DA7DC1 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
 		9A19EE10245B999F00DA7DC1 /* FloatingCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingCircleButton.swift; sourceTree = "<group>"; };
+		9A19EE15245D77EB00DA7DC1 /* AudioCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCoordinator.swift; sourceTree = "<group>"; };
+		9A19EE18245D792200DA7DC1 /* AudioNotesListView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AudioNotesListView.storyboard; sourceTree = "<group>"; };
+		9A19EE1A245D795200DA7DC1 /* AudioNotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioNotesListViewController.swift; sourceTree = "<group>"; };
 		9A39997C244210CC00B6C685 /* NTTextViewToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbar.swift; sourceTree = "<group>"; };
 		9A39997E244216F900B6C685 /* NTTextViewToolbarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NTTextViewToolbarDelegate.swift; sourceTree = "<group>"; };
 		9A399A252447E77900B6C685 /* PersistanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceService.swift; sourceTree = "<group>"; };
@@ -173,6 +179,23 @@
 				9A19EE10245B999F00DA7DC1 /* FloatingCircleButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		9A19EE14245D77CC00DA7DC1 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				9A19EE15245D77EB00DA7DC1 /* AudioCoordinator.swift */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		9A19EE17245D78DC00DA7DC1 /* AudioNotesListView */ = {
+			isa = PBXGroup;
+			children = (
+				9A19EE18245D792200DA7DC1 /* AudioNotesListView.storyboard */,
+				9A19EE1A245D795200DA7DC1 /* AudioNotesListViewController.swift */,
+			);
+			path = AudioNotesListView;
 			sourceTree = "<group>";
 		};
 		9A39997924420E2800B6C685 /* TextToolBarView */ = {
@@ -323,6 +346,8 @@
 		9A8DC15C2438EC2800C5D18C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				9A19EE17245D78DC00DA7DC1 /* AudioNotesListView */,
+				9A19EE14245D77CC00DA7DC1 /* Audio */,
 				9A19EDF92454819500DA7DC1 /* EmptyScreen */,
 				9A8DC15D2438EC5400C5D18C /* Written */,
 			);
@@ -457,6 +482,7 @@
 				9A58AB5324354B730087609D /* LaunchScreen.storyboard in Resources */,
 				9A19EDFB245481B400DA7DC1 /* EmptyScreenView.storyboard in Resources */,
 				9A58AB5024354B730087609D /* Assets.xcassets in Resources */,
+				9A19EE19245D792200DA7DC1 /* AudioNotesListView.storyboard in Resources */,
 				9A58AB7B243555B00087609D /* WrittenNoteView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,7 +531,9 @@
 				9A830FB5243D3F8C001FF27D /* ColorConstants.swift in Sources */,
 				9A58AB4E24354B6F0087609D /* NoteTaker.xcdatamodeld in Sources */,
 				9A62C8CC2438D48E00746F07 /* WrittenCoordinator.swift in Sources */,
+				9A19EE16245D77EB00DA7DC1 /* AudioCoordinator.swift in Sources */,
 				9A58AB81243558DB0087609D /* WrittenNotesListViewController.swift in Sources */,
+				9A19EE1B245D795200DA7DC1 /* AudioNotesListViewController.swift in Sources */,
 				9A399A262447E77900B6C685 /* PersistanceService.swift in Sources */,
 				9A19EE0E245A500800DA7DC1 /* TextToSpeech.swift in Sources */,
 				9A58AB8524355A1D0087609D /* Storyboarded.swift in Sources */,
