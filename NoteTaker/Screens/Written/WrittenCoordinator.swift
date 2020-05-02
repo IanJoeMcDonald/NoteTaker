@@ -19,11 +19,19 @@ class WrittenCoordinator: Coordinator {
         primaryNavigationController.viewControllers = [notesListViewController]
         
         let detailViewController = EmptyScreenViewController.instantiate()
+        detailViewController.imageName = "doc.text"
         
         let detailNav = UINavigationController(rootViewController: detailViewController)
         splitViewController.viewControllers = [primaryNavigationController, detailNav]
         splitViewController.delegate = SplitViewControllerDelegate.shared
         splitViewController.preferredDisplayMode = .allVisible
+        
+        setTabBarItem()
+    }
+    
+    func setTabBarItem() {
+        splitViewController.tabBarItem.image = UIImage(systemName: "doc.text")
+        splitViewController.tabBarItem.title = "Written"
     }
     
     func showDetailView(with note: WrittenNote) {

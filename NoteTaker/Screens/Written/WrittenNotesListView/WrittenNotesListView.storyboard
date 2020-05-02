@@ -46,7 +46,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wh-cf-9fo" customClass="FloatingCircleButton" customModule="NoteTaker" customModuleProvider="target">
-                                <rect key="frame" x="344" y="826" width="50" height="50"/>
+                                <rect key="frame" x="344" y="792" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="aNA-48-yFm"/>
                                     <constraint firstAttribute="width" constant="50" id="wEA-Ag-vmE"/>
@@ -61,10 +61,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="BWg-3d-pZX" secondAttribute="bottom" id="Dug-VJ-ijN"/>
-                            <constraint firstAttribute="trailing" secondItem="0wh-cf-9fo" secondAttribute="trailing" constant="20" id="FUR-8w-2bs"/>
+                            <constraint firstItem="DHb-sY-7Oe" firstAttribute="trailing" secondItem="0wh-cf-9fo" secondAttribute="trailing" constant="20" id="FUR-8w-2bs"/>
                             <constraint firstItem="DHb-sY-7Oe" firstAttribute="trailing" secondItem="BWg-3d-pZX" secondAttribute="trailing" id="Hwa-8p-pul"/>
                             <constraint firstItem="BWg-3d-pZX" firstAttribute="top" secondItem="DHb-sY-7Oe" secondAttribute="top" constant="10" id="WbH-zg-F3a"/>
-                            <constraint firstAttribute="bottom" secondItem="0wh-cf-9fo" secondAttribute="bottom" constant="20" id="ZTk-ir-gIE"/>
+                            <constraint firstItem="DHb-sY-7Oe" firstAttribute="bottom" secondItem="0wh-cf-9fo" secondAttribute="bottom" constant="20" id="ZTk-ir-gIE"/>
                             <constraint firstItem="BWg-3d-pZX" firstAttribute="leading" secondItem="DHb-sY-7Oe" secondAttribute="leading" id="zNO-PF-Obo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DHb-sY-7Oe"/>
