@@ -10,20 +10,17 @@ import UIKit
 
 class WrittenCoordinator: Coordinator {
     var splitViewController = UISplitViewController()
-    var primaryNavigationController = CoordinatedNavigationController()
+    var primaryNavigationController = UINavigationController()
     
     var notesListViewController = WrittenNotesListViewController.instantiate()
     
     init() {
-        primaryNavigationController.coordinator = self
-        
         notesListViewController.coordinator = self
         primaryNavigationController.viewControllers = [notesListViewController]
         
         let detailViewController = EmptyScreenViewController.instantiate()
         
-        let detailNav = CoordinatedNavigationController(rootViewController: detailViewController)
-        detailNav.coordinator = self
+        let detailNav = UINavigationController(rootViewController: detailViewController)
         splitViewController.viewControllers = [primaryNavigationController, detailNav]
         splitViewController.delegate = SplitViewControllerDelegate.shared
         splitViewController.preferredDisplayMode = .allVisible
@@ -31,8 +28,7 @@ class WrittenCoordinator: Coordinator {
     
     func showDetailView(with note: WrittenNote) {
         let detailVc = WrittenNoteViewController.instantiate()
-        let detailNav = CoordinatedNavigationController(rootViewController: detailVc)
-        detailVc.coordinator = self
+        let detailNav = UINavigationController(rootViewController: detailVc)
         detailVc.note = note
         splitViewController.showDetailViewController(detailNav, sender: self)
         UIView.animate(withDuration: 0.5) { [weak self] in

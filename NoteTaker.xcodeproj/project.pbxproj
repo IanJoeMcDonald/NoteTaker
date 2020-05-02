@@ -37,7 +37,6 @@
 		9A58AB81243558DB0087609D /* WrittenNotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB80243558DB0087609D /* WrittenNotesListViewController.swift */; };
 		9A58AB83243559E10087609D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB82243559E10087609D /* Coordinator.swift */; };
 		9A58AB8524355A1D0087609D /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A58AB8424355A1D0087609D /* Storyboarded.swift */; };
-		9A62C8A42437F50B00746F07 /* CoordinatedNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62C8A32437F50B00746F07 /* CoordinatedNavController.swift */; };
 		9A62C8CA2438D37500746F07 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62C8C92438D37500746F07 /* MainTabBarController.swift */; };
 		9A62C8CC2438D48E00746F07 /* WrittenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A62C8CB2438D48E00746F07 /* WrittenCoordinator.swift */; };
 		9A830FB5243D3F8C001FF27D /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A830FB4243D3F8C001FF27D /* ColorConstants.swift */; };
@@ -100,7 +99,6 @@
 		9A58AB80243558DB0087609D /* WrittenNotesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittenNotesListViewController.swift; sourceTree = "<group>"; };
 		9A58AB82243559E10087609D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9A58AB8424355A1D0087609D /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
-		9A62C8A32437F50B00746F07 /* CoordinatedNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedNavController.swift; sourceTree = "<group>"; };
 		9A62C8C92438D37500746F07 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		9A62C8CB2438D48E00746F07 /* WrittenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittenCoordinator.swift; sourceTree = "<group>"; };
 		9A830FB4243D3F8C001FF27D /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 				9A19EE0F245B997000DA7DC1 /* Buttons */,
 				9A39997924420E2800B6C685 /* TextToolBarView */,
 				9A1701DA243BF7B700ECC036 /* ColorPickerView */,
-				9A62C8A32437F50B00746F07 /* CoordinatedNavController.swift */,
 				9AC7E049243FD9960092FE06 /* NTMonitoredImageView.swift */,
 				9A62C8C92438D37500746F07 /* MainTabBarController.swift */,
 				9A8DC1552438E37500C5D18C /* SplitViewControllerDelegate.swift */,
@@ -500,7 +497,6 @@
 				9A58AB83243559E10087609D /* Coordinator.swift in Sources */,
 				9A19EE03245649B700DA7DC1 /* DateExtension.swift in Sources */,
 				9AC7E04A243FD9960092FE06 /* NTMonitoredImageView.swift in Sources */,
-				9A62C8A42437F50B00746F07 /* CoordinatedNavController.swift in Sources */,
 				9A1701E0243D3CB200ECC036 /* NTColorPickerDelegate.swift in Sources */,
 				9A58AB7D243555CE0087609D /* WrittenNoteViewController.swift in Sources */,
 				9A8DC1562438E37500C5D18C /* SplitViewControllerDelegate.swift in Sources */,
