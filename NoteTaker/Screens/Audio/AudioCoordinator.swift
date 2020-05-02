@@ -19,16 +19,18 @@ class AudioCoordinator: Coordinator {
         primaryNavigationController.viewControllers = [notesListViewController]
         
         let detailViewController = EmptyScreenViewController.instantiate()
+        detailViewController.imageName = "music.mic"
         
         let detailNav = UINavigationController(rootViewController: detailViewController)
         splitViewController.viewControllers = [primaryNavigationController, detailNav]
         splitViewController.delegate = SplitViewControllerDelegate.shared
         splitViewController.preferredDisplayMode = .allVisible
         
+        setTabBarItem()
+    }
+    
+    func setTabBarItem() {
         splitViewController.tabBarItem.image = UIImage(systemName: "music.mic")
         splitViewController.tabBarItem.title = "Audio"
     }
-    
-    
-    
 }
