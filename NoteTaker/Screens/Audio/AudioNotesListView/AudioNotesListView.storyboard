@@ -45,7 +45,7 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="addButtonTapped:" destination="6bY-qp-U9d" eventType="touchUpInside" id="0oR-YD-ncn"/>
+                                    <action selector="addButtonTapped:" destination="6bY-qp-U9d" eventType="touchUpInside" id="UkF-5P-Wz8"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,7 +61,7 @@
                         <viewLayoutGuide key="safeArea" id="vcS-pq-k5B"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="5aM-3C-R25" id="LPX-vz-B1g"/>
+                        <outlet property="collectionView" destination="5aM-3C-R25" id="1xY-Qa-aLk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kAT-I1-lPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

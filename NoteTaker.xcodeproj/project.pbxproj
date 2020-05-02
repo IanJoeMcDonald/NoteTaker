@@ -184,6 +184,7 @@
 		9A19EE14245D77CC00DA7DC1 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
+				9A19EE17245D78DC00DA7DC1 /* AudioNotesListView */,
 				9A19EE15245D77EB00DA7DC1 /* AudioCoordinator.swift */,
 			);
 			path = Audio;
@@ -195,8 +196,9 @@
 				9A19EE18245D792200DA7DC1 /* AudioNotesListView.storyboard */,
 				9A19EE1A245D795200DA7DC1 /* AudioNotesListViewController.swift */,
 			);
-			path = AudioNotesListView;
-			sourceTree = "<group>";
+			name = AudioNotesListView;
+			path = NoteTaker/Screens/AudioNotesListView;
+			sourceTree = SOURCE_ROOT;
 		};
 		9A39997924420E2800B6C685 /* TextToolBarView */ = {
 			isa = PBXGroup;
@@ -346,7 +348,6 @@
 		9A8DC15C2438EC2800C5D18C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				9A19EE17245D78DC00DA7DC1 /* AudioNotesListView */,
 				9A19EE14245D77CC00DA7DC1 /* Audio */,
 				9A19EDF92454819500DA7DC1 /* EmptyScreen */,
 				9A8DC15D2438EC5400C5D18C /* Written */,

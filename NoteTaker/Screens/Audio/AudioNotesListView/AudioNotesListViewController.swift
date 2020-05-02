@@ -9,16 +9,16 @@
 import UIKit
 
 class AudioNotesListViewController: UIViewController, Storyboarded {
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+
     var coordinator: AudioCoordinator?
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        
+        print("Add Audio Note")
     }
 }
