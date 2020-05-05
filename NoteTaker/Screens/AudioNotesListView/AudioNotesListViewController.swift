@@ -15,10 +15,9 @@ class AudioNotesListViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        
+        coordinator?.showDetailView()
     }
 }

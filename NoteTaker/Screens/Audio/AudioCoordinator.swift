@@ -33,4 +33,13 @@ class AudioCoordinator: Coordinator {
         splitViewController.tabBarItem.image = UIImage(systemName: "music.mic")
         splitViewController.tabBarItem.title = "Audio"
     }
+    
+    func showDetailView() {
+        let detailVc = AudioNoteViewController.instantiate()
+        let detailNav = UINavigationController(rootViewController: detailVc)
+        splitViewController.showDetailViewController(detailNav, sender: self)
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            self?.splitViewController.preferredDisplayMode = .primaryHidden
+        }
+    }
 }

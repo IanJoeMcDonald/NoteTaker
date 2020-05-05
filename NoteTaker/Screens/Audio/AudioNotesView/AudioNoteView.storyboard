@@ -15,26 +15,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoH-iD-zGQ">
-                                <rect key="frame" x="183" y="433" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PoH-iD-zGQ">
+                                <rect key="frame" x="20" y="433" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Mor-27-Lm8"/>
+                                </constraints>
                                 <state key="normal" title="Record"/>
                                 <connections>
                                     <action selector="recordButtonTapped:" destination="CfF-7b-wvZ" eventType="touchUpInside" id="QHe-4k-7N5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap2-sC-yYV">
-                                <rect key="frame" x="194" y="615" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ap2-sC-yYV">
+                                <rect key="frame" x="20" y="533" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FM0-Lv-GGF"/>
+                                </constraints>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playButtonTapped:" destination="CfF-7b-wvZ" eventType="touchUpInside" id="2Py-V8-sl4"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpm-PX-Kdu">
+                                <rect key="frame" x="20" y="483" width="374" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Fah-RT-vec"/>
+                                </constraints>
+                                <state key="normal" title="Pause"/>
+                                <connections>
+                                    <action selector="pauseButtonTapped:" destination="CfF-7b-wvZ" eventType="touchUpInside" id="8mc-UR-1Z9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ap2-sC-yYV" firstAttribute="leading" secondItem="PoH-iD-zGQ" secondAttribute="leading" id="EjH-7S-ldX"/>
+                            <constraint firstItem="Rpm-PX-Kdu" firstAttribute="top" secondItem="PoH-iD-zGQ" secondAttribute="bottom" constant="20" id="JLQ-Ge-pin"/>
+                            <constraint firstItem="Rpm-PX-Kdu" firstAttribute="leading" secondItem="PoH-iD-zGQ" secondAttribute="leading" id="NOo-zd-ZDD"/>
+                            <constraint firstItem="PoH-iD-zGQ" firstAttribute="leading" secondItem="dwb-61-QdX" secondAttribute="leading" constant="20" id="QFr-FW-qhj"/>
+                            <constraint firstItem="Rpm-PX-Kdu" firstAttribute="trailing" secondItem="PoH-iD-zGQ" secondAttribute="trailing" id="VWT-Re-wpN"/>
+                            <constraint firstItem="ap2-sC-yYV" firstAttribute="trailing" secondItem="PoH-iD-zGQ" secondAttribute="trailing" id="dtf-pi-5Eu"/>
+                            <constraint firstItem="PoH-iD-zGQ" firstAttribute="centerY" secondItem="8tz-hY-Cvr" secondAttribute="centerY" id="fMs-xR-7qs"/>
+                            <constraint firstItem="dwb-61-QdX" firstAttribute="trailing" secondItem="PoH-iD-zGQ" secondAttribute="trailing" constant="20" id="pKg-52-o7f"/>
+                            <constraint firstItem="ap2-sC-yYV" firstAttribute="top" secondItem="Rpm-PX-Kdu" secondAttribute="bottom" constant="20" id="u70-tJ-AY1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dwb-61-QdX"/>
                     </view>
+                    <connections>
+                        <outlet property="pauseButton" destination="Rpm-PX-Kdu" id="yIL-WI-vKB"/>
+                        <outlet property="recordButton" destination="PoH-iD-zGQ" id="RpA-9s-CGX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AlC-Yy-3mP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
